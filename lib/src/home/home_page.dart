@@ -1,6 +1,9 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:portfolio/src/home/state_manger/hover_state_manager.dart';
 import 'package:portfolio/src/home/widgets/app_bar_action_buttons.dart';
+import 'package:portfolio/src/home/widgets/button_names.dart';
 import 'package:portfolio/src/texts_and_other_messages/name_and_description_txt.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,11 +26,42 @@ class _HomePageState extends State<HomePage>
     );
   }
 
+  final HoverStateManager manager = HoverStateManager();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Colors.black,
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          AppBarActionButtons(
+            ontap: () {},
+
+            fisrtText: ButtonNames.btn1,
+            secText: ButtonNames.btn1sub,
+          ),
+          SizedBox(width: 15),
+          AppBarActionButtons(
+            ontap: () {},
+
+            fisrtText: ButtonNames.btn2,
+            secText: ButtonNames.btn2sub,
+          ),
+          SizedBox(width: 15),
+          AppBarActionButtons(
+            ontap: () {},
+
+            fisrtText: ButtonNames.btn3,
+            secText: ButtonNames.btn3sub,
+          ),
+          SizedBox(width: 15),
+          AppBarActionButtons(
+            ontap: () {},
+
+            fisrtText: ButtonNames.btn4,
+            secText: ButtonNames.btn4sub,
+          ),
+        ],
+      ),
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -49,14 +83,31 @@ class _HomePageState extends State<HomePage>
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                textAlign: TextAlign.center,
-                NameAndDescriptionTxt.name,
-                style: TextStyle(
-                  // color: Colors.black,
-                  fontSize: 45,
-                  fontWeight: FontWeight.bold,
-                ),
+              AnimatedTextKit(
+                // controller: ,
+                repeatForever: false,
+                totalRepeatCount: 1,
+
+                animatedTexts: [
+                  TyperAnimatedText(
+                    NameAndDescriptionTxt.name,
+                    textAlign: TextAlign.center,
+                    textStyle: TextStyle(
+                      // color: Colors.black,
+                      fontSize: 45,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+                // child: Text(
+                //   textAlign: TextAlign.center,
+                //   NameAndDescriptionTxt.name,
+                //   style: TextStyle(
+                //     // color: Colors.black,
+                //     fontSize: 45,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
               ),
 
               SizedBox(height: 15),

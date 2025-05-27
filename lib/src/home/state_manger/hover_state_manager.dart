@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class HoverStateManager extends ChangeNotifier {
@@ -5,6 +7,7 @@ class HoverStateManager extends ChangeNotifier {
 
   onhover1() {
     _isHover1 = !_isHover1;
+    log("messagefjadhsgf");
     notifyListeners();
   }
 

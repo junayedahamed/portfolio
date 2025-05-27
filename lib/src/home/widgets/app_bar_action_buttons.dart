@@ -1,19 +1,26 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/home/state_manger/hover_state_manager.dart';
 
-class AppBarActionButtons extends StatelessWidget {
-  AppBarActionButtons({
+class AppBarActionButtons extends StatefulWidget {
+  const AppBarActionButtons({
     super.key,
     required this.ontap,
-    required this.hoverfunc,
-    required this.hoverState,
+
     required this.fisrtText,
     required this.secText,
   });
-  final VoidCallback ontap, hoverfunc;
+  final VoidCallback ontap;
   final String fisrtText, secText;
-  final bool hoverState;
+
+  @override
+  State<AppBarActionButtons> createState() => _AppBarActionButtonsState();
+}
+
+class _AppBarActionButtonsState extends State<AppBarActionButtons> {
   final HoverStateManager manager = HoverStateManager();
+  bool hovering = false;
   @override
   Widget build(BuildContext context) {
     return ListenableBuilder(
@@ -21,15 +28,21 @@ class AppBarActionButtons extends StatelessWidget {
       builder: (context, asyncSnapshot) {
         return MouseRegion(
           onEnter: (event) {
-            hoverfunc;
+            setState(() {
+              hovering = true;
+            });
           },
           onExit: (event) {
-            hoverfunc;
+            // hoverfunc;
+            setState(() {
+              hovering = false;
+            });
           },
+
           child: GestureDetector(
-            onTap: ontap,
+            onTap: widget.ontap,
             child: Text(
-              hoverState ? fisrtText : '[ $secText ]',
+              hovering ? '[ ${widget.secText} ]' : widget.fisrtText,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
             ),
           ),

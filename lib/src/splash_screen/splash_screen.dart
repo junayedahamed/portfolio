@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -26,7 +27,10 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   void waitAndgo() async {
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(seconds: 4));
+    if (mounted) {
+      context.go('/home');
+    }
   }
 
   @override
