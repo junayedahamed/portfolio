@@ -4,10 +4,16 @@ class MyWebsiteTheme {
   // MyWebsiteTheme instance = MyWebsiteTheme();
   ThemeData lightTheme = ThemeData.light().copyWith(
     scaffoldBackgroundColor: Colors.white,
+    drawerTheme: DrawerThemeData(
+      shadowColor: Colors.white,
+      backgroundColor: Colors.white,
+      elevation: 0,
+      shape: BeveledRectangleBorder(),
+    ),
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.white,
       elevation: 0,
-      shadowColor: Colors.white,
+      shadowColor: Colors.grey,
     ),
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.grey,
@@ -23,6 +29,7 @@ class MyWebsiteTheme {
       elevation: 0,
       shadowColor: Colors.black,
     ),
+
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.white,
       brightness: Brightness.dark,

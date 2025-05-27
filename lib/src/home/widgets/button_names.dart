@@ -9,4 +9,5 @@ class ButtonNames {
   static final btn3sub = "JOBS";
   static final btn4 = "PROJECTS";
   static final btn4sub = "WORK";
+  static final downloadCv = "Download CV";
 }
