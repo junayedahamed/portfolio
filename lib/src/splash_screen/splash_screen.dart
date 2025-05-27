@@ -30,6 +30,13 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   @override
+  void dispose() {
+    animationController.dispose();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final animate = Tween(begin: 0, end: pi * 2).animate(animationController);
     // final arg = Matrix4.columns(
