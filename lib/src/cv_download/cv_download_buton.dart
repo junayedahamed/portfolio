@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/cv_download/download_function.dart';
 import 'package:portfolio/src/home/widgets/button_names.dart';
 
 class CvDownloadButon extends StatefulWidget {
@@ -10,8 +11,14 @@ class CvDownloadButon extends StatefulWidget {
 }
 
 class _CvDownloadButonState extends State<CvDownloadButon> {
+  final DownloadFunction downloadFunction = DownloadFunction();
   double height = 48, width = 230, borderWidth = 1;
+  // final File filePath = File("image/Resume.pdf");
+  var fileName = "Resume";
+  String assetPath = 'image/Resume.pdf';
+
   // Color color = Colors.transparent;
+
   @override
   Widget build(BuildContext context) {
     final Brightness brightness = Theme.of(context).brightness;
@@ -33,12 +40,15 @@ class _CvDownloadButonState extends State<CvDownloadButon> {
         });
       },
       child: GestureDetector(
-        onTap: widget.ontap,
+        onTap: () {
+          downloadFunction.loadAssetAsBytes(assetPath);
+        },
         child: Container(
           height: height,
           width: width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
+
             border: Border.all(
               width: borderWidth,
               color: brightness == Brightness.dark
@@ -61,6 +71,7 @@ class _CvDownloadButonState extends State<CvDownloadButon> {
           ),
           child: Center(
             child: Text(
+              textAlign: TextAlign.center,
               ButtonNames.downloadCv,
               style: TextStyle(
                 fontSize: 16,
