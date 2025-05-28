@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   void waitAndgo() async {
-    await Future.delayed(Duration(seconds: 4));
+    await Future.delayed(Duration(seconds: 3));
     if (mounted) {
       context.go('/home');
     }

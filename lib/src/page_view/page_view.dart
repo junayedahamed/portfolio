@@ -104,24 +104,25 @@ class _MyPageViewState extends State<MyPageView> {
           ? AppBar(
               automaticallyImplyLeading: false,
               title: index != 0
-                  ? Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {
-                            setState(() {
-                              index = 0;
-                            });
-                          },
-                          icon: Icon(Icons.arrow_back, size: 15),
-                        ),
-                        Text(
-                          "Back to home",
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w500,
+                  ? GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          index = 0;
+                        });
+                      },
+                      child: Row(
+                        children: [
+                          Icon(Icons.arrow_back, size: 20),
+                          SizedBox(width: 5),
+                          Text(
+                            "Back to home",
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     )
                   : null,
               actions: [
@@ -180,24 +181,25 @@ class _MyPageViewState extends State<MyPageView> {
           : AppBar(
               automaticallyImplyLeading: false,
               title: index != 0
-                  ? Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {
-                            setState(() {
-                              index = 0;
-                            });
-                          },
-                          icon: Icon(Icons.arrow_back, size: 15),
-                        ),
-                        Text(
-                          "Back to home",
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w500,
+                  ? GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          index = 0;
+                        });
+                      },
+                      child: Row(
+                        children: [
+                          Icon(Icons.arrow_back, size: 20),
+                          SizedBox(width: 5),
+                          Text(
+                            "Back to home",
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     )
                   : null,
             ),

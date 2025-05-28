@@ -1,8 +1,5 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:portfolio/src/about_and_contact/widget/about_card.dart';
 import 'package:portfolio/src/about_and_contact/widget/large_screen.dart';
 import 'package:portfolio/src/about_and_contact/widget/medium_screen.dart';
 import 'package:portfolio/src/about_and_contact/widget/small_screen.dart';
@@ -37,8 +34,8 @@ class _AboutAndContactState extends State<AboutAndContact>
   Widget build(BuildContext context) {
     double screenwidth = MediaQuery.of(context).size.width;
     double screenheighgt = MediaQuery.of(context).size.height;
-    log("height: ${screenheighgt.toString()}");
-    log("width: ${screenwidth.toString()}");
+    // log("height: ${screenheighgt.toString()}");
+    // log("width: ${screenwidth.toString()}");
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,
