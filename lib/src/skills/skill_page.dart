@@ -1,8 +1,5 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:portfolio/src/about_and_contact/about_data/about_data.dart';
 import 'package:portfolio/src/skills/widget/tech_item_image_path.dart';
 
 class SkillPage extends StatelessWidget {

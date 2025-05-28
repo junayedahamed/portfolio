@@ -30,7 +30,7 @@ class _MyPageViewState extends State<MyPageView> {
     double screenwidth = MediaQuery.of(context).size.width;
     // double screenheighgt = MediaQuery.of(context).size.height;
     return Scaffold(
-      endDrawer: screenwidth <= 560
+      endDrawer: screenwidth <= 625
           ? MyDrawer(
               widget: Column(
                 // mainAxisAlignment: MainAxisAlignment.,
@@ -100,7 +100,7 @@ class _MyPageViewState extends State<MyPageView> {
             )
           : null,
 
-      appBar: screenwidth >= 561
+      appBar: screenwidth >= 626
           ? AppBar(
               automaticallyImplyLeading: false,
               title: index != 0

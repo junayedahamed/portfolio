@@ -2,7 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:portfolio/src/cv_download/cv_download_buton.dart';
-import 'package:portfolio/src/texts_and_other_messages/name_and_description_txt.dart';
+import 'package:portfolio/src/home/texts_and_other_messages/name_and_description_txt.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

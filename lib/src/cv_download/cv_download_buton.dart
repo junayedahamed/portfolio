@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/cv_download/download_function.dart';
 import 'package:portfolio/src/home/widgets/button_names.dart';
 
 class CvDownloadButon extends StatefulWidget {
@@ -10,7 +11,7 @@ class CvDownloadButon extends StatefulWidget {
 }
 
 class _CvDownloadButonState extends State<CvDownloadButon> {
-  // final DownloadFunction downloadFunction = DownloadFunction();
+  final DownloadFunction downloadFunction = DownloadFunction();
   double height = 48, width = 230, borderWidth = 1;
   // final File filePath = File("image/Resume.pdf");
   var fileName = "Resume";
