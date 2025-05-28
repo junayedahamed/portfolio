@@ -46,6 +46,7 @@ class _AboutAndContactState extends State<AboutAndContact>
           Center(
             child: Lottie.asset(
               "image/firework.json",
+
               height: screenheighgt,
               width: screenheighgt,
               // fit: BoxFit.cover,
@@ -59,9 +60,9 @@ class _AboutAndContactState extends State<AboutAndContact>
               repeat: true,
             ),
           ),
-          screenwidth <= 600
+          screenwidth <= 625
               ? SmallScreenAbout()
-              : screenwidth <= 850 && screenwidth >= 601
+              : screenwidth <= 850 && screenwidth >= 626
               ? MediumScreen()
               : LargeScreenAbout(),
         ],

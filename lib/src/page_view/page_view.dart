@@ -30,7 +30,75 @@ class _MyPageViewState extends State<MyPageView> {
     double screenwidth = MediaQuery.of(context).size.width;
     // double screenheighgt = MediaQuery.of(context).size.height;
     return Scaffold(
-      endDrawer: screenwidth <= 560 ? MyDrawer() : null,
+      endDrawer: screenwidth <= 560
+          ? MyDrawer(
+              widget: Column(
+                // mainAxisAlignment: MainAxisAlignment.,
+                spacing: 15,
+                children: [
+                  SizedBox(height: 25),
+                  AppBarActionButtons(
+                    ontap: () {
+                      setState(() {
+                        index = 0;
+                      });
+                      Navigator.of(context).pop();
+                    },
+
+                    fisrtText: "Home",
+                    secText: "Home",
+                  ),
+                  AppBarActionButtons(
+                    ontap: () {
+                      setState(() {
+                        index = 1;
+                      });
+                      Navigator.of(context).pop();
+                    },
+
+                    fisrtText: ButtonNames.btn1,
+                    secText: ButtonNames.btn1sub,
+                  ),
+                  SizedBox(width: 15),
+                  AppBarActionButtons(
+                    ontap: () {
+                      setState(() {
+                        index = 2;
+                      });
+                      Navigator.of(context).pop();
+                    },
+
+                    fisrtText: ButtonNames.btn2,
+                    secText: ButtonNames.btn2sub,
+                  ),
+                  SizedBox(width: 15),
+                  AppBarActionButtons(
+                    ontap: () {
+                      setState(() {
+                        index = 3;
+                      });
+                      Navigator.of(context).pop();
+                    },
+
+                    fisrtText: ButtonNames.btn3,
+                    secText: ButtonNames.btn3sub,
+                  ),
+                  SizedBox(width: 15),
+                  AppBarActionButtons(
+                    ontap: () {
+                      setState(() {
+                        index = 4;
+                      });
+                      Navigator.of(context).pop();
+                    },
+
+                    fisrtText: ButtonNames.btn4,
+                    secText: ButtonNames.btn4sub,
+                  ),
+                ],
+              ),
+            )
+          : null,
 
       appBar: screenwidth >= 561
           ? AppBar(
