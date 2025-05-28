@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/about_and_contact/about_data/about_data.dart';
 import 'package:portfolio/src/about_and_contact/widget/about_card.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LargeScreenAbout extends StatelessWidget {
   const LargeScreenAbout({super.key});
@@ -64,14 +65,33 @@ class LargeScreenAbout extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        final Uri emailUri = Uri(
+                          scheme: 'mailto',
+                          path: AboutData.email,
+                        );
+
+                        if (await canLaunchUrl(emailUri)) {
+                          await launchUrl(emailUri);
+                        } else {
+                          throw 'Could not launch email client';
+                        }
+                      },
                       child: Text(
                         "Email",
                         style: TextStyle(color: Colors.cyanAccent),
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        final Uri giturl = Uri.parse(AboutData.github);
+
+                        if (await canLaunchUrl(giturl)) {
+                          await launchUrl(giturl);
+                        } else {
+                          throw 'Could not launch email client';
+                        }
+                      },
                       child: Text(
                         "Github",
                         style: TextStyle(color: Colors.cyanAccent),
@@ -85,7 +105,15 @@ class LargeScreenAbout extends StatelessWidget {
                   children: [
                     Text("📍 Dhaka,BD"),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        final Uri url = Uri.parse(AboutData.linkedin);
+
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url);
+                        } else {
+                          throw 'Could not launch email client';
+                        }
+                      },
                       child: Text(
                         "LinkedIn",
                         style: TextStyle(color: Colors.cyanAccent),
@@ -98,7 +126,15 @@ class LargeScreenAbout extends StatelessWidget {
                   children: [
                     Text("                     "),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        final Uri giturl = Uri.parse(AboutData.facebook);
+
+                        if (await canLaunchUrl(giturl)) {
+                          await launchUrl(giturl);
+                        } else {
+                          throw 'Could not launch email client';
+                        }
+                      },
                       child: Text(
                         "Facebook",
                         style: TextStyle(color: Colors.cyanAccent),

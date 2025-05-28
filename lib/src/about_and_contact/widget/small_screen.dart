@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/about_and_contact/about_data/about_data.dart';
 import 'package:portfolio/src/about_and_contact/widget/about_card.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SmallScreenAbout extends StatelessWidget {
   const SmallScreenAbout({super.key});
@@ -75,7 +76,18 @@ class SmallScreenAbout extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        final Uri emailUri = Uri(
+                          scheme: 'mailto',
+                          path: AboutData.email,
+                        );
+
+                        if (await canLaunchUrl(emailUri)) {
+                          await launchUrl(emailUri);
+                        } else {
+                          throw 'Could not launch email client';
+                        }
+                      },
                       child: Text(
                         overflow: TextOverflow.ellipsis,
                         "Email",
@@ -83,7 +95,15 @@ class SmallScreenAbout extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        final Uri giturl = Uri.parse(AboutData.github);
+
+                        if (await canLaunchUrl(giturl)) {
+                          await launchUrl(giturl);
+                        } else {
+                          throw 'Could not launch email client';
+                        }
+                      },
                       child: Text(
                         overflow: TextOverflow.ellipsis,
                         "Github",
@@ -98,7 +118,15 @@ class SmallScreenAbout extends StatelessWidget {
                   children: [
                     Text("📍 Dhaka,BD", overflow: TextOverflow.ellipsis),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        final Uri url = Uri.parse(AboutData.linkedin);
+
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url);
+                        } else {
+                          throw 'Could not launch email client';
+                        }
+                      },
                       child: Text(
                         "LinkedIn",
                         overflow: TextOverflow.ellipsis,
@@ -112,7 +140,15 @@ class SmallScreenAbout extends StatelessWidget {
                   children: [
                     Text("                     "),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        final Uri giturl = Uri.parse(AboutData.facebook);
+
+                        if (await canLaunchUrl(giturl)) {
+                          await launchUrl(giturl);
+                        } else {
+                          throw 'Could not launch email client';
+                        }
+                      },
                       child: Text(
                         "Facebook",
                         overflow: TextOverflow.ellipsis,

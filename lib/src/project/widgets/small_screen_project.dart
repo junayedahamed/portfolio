@@ -10,7 +10,7 @@ class SmallScreenProject extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log(ProjectData.projectDescription.length.toString());
+    // log(ProjectData.projectDescription.length.toString());
     return ListView(
       // children: [
       //   //about card one

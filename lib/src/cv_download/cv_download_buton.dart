@@ -41,7 +41,7 @@ class _CvDownloadButonState extends State<CvDownloadButon> {
       },
       child: GestureDetector(
         onTap: () {
-          // downloadFunction.loadAssetAsBytes(assetPath);
+          downloadFunction.loadAssetAsBytes(assetPath);
         },
         child: Container(
           height: height,
