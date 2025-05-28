@@ -2,9 +2,6 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:portfolio/src/cv_download/cv_download_buton.dart';
-import 'package:portfolio/src/home/widgets/app_bar_action_buttons.dart';
-import 'package:portfolio/src/home/widgets/button_names.dart';
-import 'package:portfolio/src/home/widgets/my_drawer.dart';
 import 'package:portfolio/src/texts_and_other_messages/name_and_description_txt.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,6 +24,11 @@ class _HomePageState extends State<HomePage>
     );
   }
 
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
   // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   // void _openEndDrawer() {
@@ -46,42 +48,6 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       // key: _scaffoldKey,
       // backgroundColor: Colors.black,
-      endDrawer: screenwidth <= 560 ? MyDrawer() : null,
-
-      appBar: screenwidth >= 561
-          ? AppBar(
-              actions: [
-                AppBarActionButtons(
-                  ontap: () {},
-
-                  fisrtText: ButtonNames.btn1,
-                  secText: ButtonNames.btn1sub,
-                ),
-                SizedBox(width: 25),
-                AppBarActionButtons(
-                  ontap: () {},
-
-                  fisrtText: ButtonNames.btn2,
-                  secText: ButtonNames.btn2sub,
-                ),
-                SizedBox(width: 30),
-                AppBarActionButtons(
-                  ontap: () {},
-
-                  fisrtText: ButtonNames.btn3,
-                  secText: ButtonNames.btn3sub,
-                ),
-                SizedBox(width: 30),
-                AppBarActionButtons(
-                  ontap: () {},
-
-                  fisrtText: ButtonNames.btn4,
-                  secText: ButtonNames.btn4sub,
-                ),
-                SizedBox(width: 25),
-              ],
-            )
-          : AppBar(),
       body: Stack(
         alignment: Alignment.center,
         children: [

@@ -11,7 +11,7 @@ class CvDownloadButon extends StatefulWidget {
 }
 
 class _CvDownloadButonState extends State<CvDownloadButon> {
-  final DownloadFunction downloadFunction = DownloadFunction();
+  // final DownloadFunction downloadFunction = DownloadFunction();
   double height = 48, width = 230, borderWidth = 1;
   // final File filePath = File("image/Resume.pdf");
   var fileName = "Resume";
@@ -41,7 +41,7 @@ class _CvDownloadButonState extends State<CvDownloadButon> {
       },
       child: GestureDetector(
         onTap: () {
-          downloadFunction.loadAssetAsBytes(assetPath);
+          // downloadFunction.loadAssetAsBytes(assetPath);
         },
         child: Container(
           height: height,
