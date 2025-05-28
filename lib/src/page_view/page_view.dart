@@ -203,7 +203,7 @@ class _MyPageViewState extends State<MyPageView> {
                     )
                   : null,
             ),
-      body: pages[index],
+      body: Center(child: pages[index]),
     );
   }
 }

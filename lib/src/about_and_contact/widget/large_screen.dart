@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/about_and_contact/about_data/about_data.dart';
 import 'package:portfolio/src/about_and_contact/widget/about_card.dart';

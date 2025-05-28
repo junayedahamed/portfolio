@@ -40,7 +40,7 @@ class AboutCard extends StatelessWidget {
             ),
           ),
         )
-        .animate(delay: Duration(milliseconds: 100 * 3))
+        .animate(delay: Duration(milliseconds: 150 * 3))
         .slideY(begin: 0.5, end: 0, delay: Duration(milliseconds: 300))
         .fadeIn();
   }
