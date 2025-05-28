@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/project/project_data/project_data.dart';
 import 'package:portfolio/src/project/widgets/project_card.dart';
