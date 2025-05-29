@@ -24,6 +24,7 @@ class MyWebsiteTheme {
   );
   ThemeData darktTheme = ThemeData.dark().copyWith(
     scaffoldBackgroundColor: Colors.black,
+    cardTheme: CardThemeData(color: Colors.black87),
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.black,
       elevation: 0,

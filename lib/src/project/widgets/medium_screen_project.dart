@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/project/project_data/project_data.dart';
+import 'package:portfolio/src/project/widgets/github_url_launch_button.dart';
 import 'package:portfolio/src/project/widgets/project_card.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:portfolio/src/project/widgets/tech_name_container_for_project.dart';
+import 'package:portfolio/src/skills/widget/tech_item_image_path.dart';
 
 class MediumScreenProject extends StatelessWidget {
   const MediumScreenProject({super.key});
@@ -14,7 +16,7 @@ class MediumScreenProject extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              //About card one
+              //project card one
               ProjectCard(
                 // width: 130,
                 height: 370,
@@ -46,32 +48,48 @@ class MediumScreenProject extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        IconButton(
-                          onPressed: () async {
-                            final url = Uri.parse(ProjectData.projectLink[0]);
-                            if (await canLaunchUrl(url)) {
-                              await launchUrl(url);
-                            } else {
-                              throw "url couldn't launch";
-                            }
-                          },
-                          icon: Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(shape: BoxShape.circle),
-                            child: Image.asset(
-                              "image/github.png",
-                              color: Colors.grey,
-                            ),
-                          ),
+                        //language and framework used to made
+                        // Container(
+                        //   height: 30,
+                        //   width: 80,
+                        //   decoration: BoxDecoration(
+                        //     color: Colors.transparent,
+                        //     borderRadius: BorderRadius.circular(20),
+                        //   ),
+                        //   child: Center(
+                        //     child: Row(
+                        //       spacing: 4,
+                        //       children: [
+                        //         Image.asset(
+                        //         ,
+                        //           height: 15,
+                        //           width: 15,
+                        //         ),
+                        //         Text(
+                        //           "Python",
+                        //           style: TextStyle(
+                        //             fontSize: 13,
+                        //             fontWeight: FontWeight.w400,
+                        //           ),
+                        //         ),
+                        //       ],
+                        //     ),
+                        //   ),
+                        // ),
+                        TechNameContainerForProject(
+                          icon: TechItemImagePath.techItemPath['Py'],
+                          name: "Python",
                         ),
+
+                        //git link of project
+                        GithubUrlLaunchButton(uri: ProjectData.projectLink[0]),
                       ],
                     ),
                   ],
                 ),
               ),
               SizedBox(width: 15),
-              //about card two
+              //project card two
               ProjectCard(
                 // width: 130,
                 height: 370,
@@ -102,25 +120,16 @@ class MediumScreenProject extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        IconButton(
-                          onPressed: () async {
-                            final url = Uri.parse(ProjectData.projectLink[1]);
-                            if (await canLaunchUrl(url)) {
-                              await launchUrl(url);
-                            } else {
-                              throw "url couldn't launch";
-                            }
-                          },
-                          icon: Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(shape: BoxShape.circle),
-                            child: Image.asset(
-                              "image/github.png",
-                              color: Colors.grey,
-                            ),
-                          ),
+                        //framework and lamguage
+                        TechNameContainerForProject(
+                          icon: TechItemImagePath.techItemPath['Flutter'],
+                          name: "Flutter",
                         ),
+                        TechNameContainerForProject(
+                          icon: TechItemImagePath.techItemPath['Dart'],
+                          name: "Dart",
+                        ),
+                        GithubUrlLaunchButton(uri: ProjectData.projectLink[1]),
                       ],
                     ),
                   ],
@@ -128,7 +137,7 @@ class MediumScreenProject extends StatelessWidget {
               ),
             ],
           ),
-          //card three if have more then add
+          //project card three if have more then add
           // Row(
           //   mainAxisAlignment: MainAxisAlignment.center,
           //   children: [],
@@ -157,25 +166,17 @@ class MediumScreenProject extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    IconButton(
-                      onPressed: () async {
-                        final url = Uri.parse(ProjectData.projectLink[2]);
-                        if (await canLaunchUrl(url)) {
-                          await launchUrl(url);
-                        } else {
-                          throw "url couldn't launch";
-                        }
-                      },
-                      icon: Container(
-                        height: 30,
-                        width: 30,
-                        decoration: BoxDecoration(shape: BoxShape.circle),
-                        child: Image.asset(
-                          "image/github.png",
-                          color: Colors.grey,
-                        ),
-                      ),
+                    //framework and lamguage
+                    TechNameContainerForProject(
+                      icon: TechItemImagePath.techItemPath['Flutter'],
+                      name: "Flutter",
                     ),
+                    TechNameContainerForProject(
+                      icon: TechItemImagePath.techItemPath['Dart'],
+                      name: "Dart",
+                    ),
+                    //add frame work and lang name
+                    GithubUrlLaunchButton(uri: ProjectData.projectLink[2]),
                   ],
                 ),
               ],

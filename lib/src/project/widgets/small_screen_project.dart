@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/project/project_data/project_data.dart';
+import 'package:portfolio/src/project/widgets/github_url_launch_button.dart';
 import 'package:portfolio/src/project/widgets/project_card.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:portfolio/src/project/widgets/tech_name_container_for_project.dart';
+import 'package:portfolio/src/skills/widget/tech_item_image_path.dart';
 
 class SmallScreenProject extends StatelessWidget {
   const SmallScreenProject({super.key});
@@ -156,25 +158,25 @@ class SmallScreenProject extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    IconButton(
-                      onPressed: () async {
-                        final url = Uri.parse(ProjectData.projectLink[index]);
-                        if (await canLaunchUrl(url)) {
-                          await launchUrl(url);
-                        } else {
-                          throw "url couldn't launch";
-                        }
-                      },
-                      icon: Container(
-                        height: 30,
-                        width: 30,
-                        decoration: BoxDecoration(shape: BoxShape.circle),
-                        child: Image.asset(
-                          "image/github.png",
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
+                    index == 0
+                        ? TechNameContainerForProject(
+                            icon: TechItemImagePath.techItemPath['Py'],
+                            name: "Python",
+                          )
+                        : Row(
+                            children: [
+                              TechNameContainerForProject(
+                                icon: TechItemImagePath.techItemPath['Flutter'],
+                                name: "Flutter",
+                              ),
+                              TechNameContainerForProject(
+                                icon: TechItemImagePath.techItemPath['Dart'],
+                                name: "Dart",
+                              ),
+                            ],
+                          ),
+
+                    GithubUrlLaunchButton(uri: ProjectData.projectLink[index]),
                   ],
                 ),
               ],
