@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MyWebsiteTheme {
   // MyWebsiteTheme instance = MyWebsiteTheme();
-  ThemeData lightTheme = ThemeData.light().copyWith(
+  final ThemeData _lightTheme = ThemeData.light().copyWith(
     scaffoldBackgroundColor: Colors.white,
     drawerTheme: DrawerThemeData(
       shadowColor: Colors.white,
@@ -22,7 +22,7 @@ class MyWebsiteTheme {
     ),
     primaryTextTheme: TextTheme(bodySmall: TextStyle(color: Colors.black)),
   );
-  ThemeData darktTheme = ThemeData.dark().copyWith(
+  final ThemeData _darktTheme = ThemeData.dark().copyWith(
     scaffoldBackgroundColor: Colors.black,
     cardTheme: CardThemeData(color: Colors.black87),
     appBarTheme: AppBarTheme(
@@ -38,6 +38,6 @@ class MyWebsiteTheme {
     ),
     primaryTextTheme: TextTheme(bodySmall: TextStyle(color: Colors.black)),
   );
-  ThemeData get light => lightTheme;
-  ThemeData get dark => darktTheme;
+  ThemeData get light => _lightTheme;
+  ThemeData get dark => _darktTheme;
 }
