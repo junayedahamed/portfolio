@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class MyWebsiteTheme {
   // MyWebsiteTheme instance = MyWebsiteTheme();
   final ThemeData _lightTheme = ThemeData.light().copyWith(
+    dividerTheme: DividerThemeData(color: Colors.transparent),
     scaffoldBackgroundColor: Colors.white,
     drawerTheme: DrawerThemeData(
       shadowColor: Colors.white,
@@ -30,7 +31,7 @@ class MyWebsiteTheme {
       elevation: 0,
       shadowColor: Colors.black,
     ),
-
+    dividerTheme: DividerThemeData(color: Colors.transparent),
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.white,
       brightness: Brightness.dark,

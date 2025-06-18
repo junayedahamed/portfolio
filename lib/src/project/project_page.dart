@@ -60,9 +60,14 @@ class _ProjectPageState extends State<ProjectPage>
 
           screenwidth <= 625
               ? SmallScreenProject()
-              : screenwidth <= 850 && screenwidth >= 626
+              : screenwidth <= 1000 && screenwidth >= 620
               ? MediumScreenProject()
               : LargeScreenProject(),
+          // screenwidth < 580
+          //     ? SmallScreenProject()
+          //     : screenwidth < 1024
+          //     ? MediumScreenProject()
+          //     : LargeScreenProject(),
         ],
       ),
     );

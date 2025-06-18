@@ -115,6 +115,22 @@ class _HomePageState extends State<HomePage>
           ),
         ],
       ),
+      persistentFooterButtons: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 1,
+          children: [
+            Icon(Icons.copyright, size: 15),
+            Text(DateTime.now().year.toString()),
+            Center(
+              child: Text(
+                " All rights reserved by Junayed.",
+                style: TextStyle(),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
