@@ -10,6 +10,9 @@ class LargeScreenProject extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    // log((width <= 1335).toString());
+    // log((width).toString());
     // return SingleChildScrollView(
     //   scrollDirection: Axis.horizontal,
     //   child: Row(
@@ -142,7 +145,19 @@ class LargeScreenProject extends StatelessWidget {
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
-        childAspectRatio: 0.9,
+        childAspectRatio: width >= 1500 && width > 1480
+            ? 1.3
+            : width <= 1480 && width > 1350
+            ? 1.2
+            : width <= 1350 && width > 1335
+            ? 1.1
+            : width <= 1335 && width > 1250
+            ? 1.08
+            : width <= 1250 && width > 1100
+            ? 1.0
+            : width <= 1000
+            ? 0.9
+            : 0.8,
       ),
       itemCount: ProjectData.projectName.length,
       itemBuilder: (context, index) {

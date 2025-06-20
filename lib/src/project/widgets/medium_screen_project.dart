@@ -248,7 +248,7 @@ class MediumScreenProject extends StatelessWidget {
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 0.8,
+        childAspectRatio: 0.785,
       ),
       itemCount: ProjectData.projectName.length,
       itemBuilder: (context, index) {

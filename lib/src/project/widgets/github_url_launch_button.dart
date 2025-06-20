@@ -19,7 +19,17 @@ class GithubUrlLaunchButton extends StatelessWidget {
         height: 30,
         width: 30,
         decoration: BoxDecoration(shape: BoxShape.circle),
-        child: Image.asset("image/github.png", color: Colors.grey),
+        child: Image.network(
+          "https://c9yois02lm.ufs.sh/f/RXJBrPvyVfAxI6OzvDqquKPZzXNU5coSTvQRwxyFYW1OAIDs",
+          color: Colors.grey,
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) return child;
+            return Center(child: CircularProgressIndicator());
+          },
+          errorBuilder: (context, error, stackTrace) {
+            return Icon(Icons.error);
+          },
+        ),
       ),
     );
   }

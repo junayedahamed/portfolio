@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/cv_download/cv_data.dart';
 import 'package:portfolio/src/cv_download/download_function.dart';
 import 'package:portfolio/src/home/widgets/button_names.dart';
 
@@ -15,7 +16,7 @@ class _CvDownloadButonState extends State<CvDownloadButon> {
   double height = 48, width = 230, borderWidth = 1;
   // final File filePath = File("image/Resume.pdf");
   var fileName = "Resume";
-  String assetPath = 'image/Resume.pdf';
+  String assetPath = CvData.cvpath;
 
   // Color color = Colors.transparent;
 

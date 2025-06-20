@@ -21,7 +21,19 @@ class TechNameContainerForProject extends StatelessWidget {
         child: Row(
           spacing: 4,
           children: [
-            Image.asset(icon, height: 15, width: 15),
+            Image.network(
+              icon,
+
+              loadingBuilder: (context, child, loadingProgress) {
+                if (loadingProgress == null) return child;
+                return Center(child: CircularProgressIndicator());
+              },
+              errorBuilder: (context, error, stackTrace) {
+                return Icon(Icons.error);
+              },
+              height: 15,
+              width: 15,
+            ),
             Text(
               name,
               style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400),

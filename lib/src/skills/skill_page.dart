@@ -7,6 +7,7 @@ class SkillPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // double screenheighgt = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Column(
       children: [
@@ -33,12 +34,26 @@ class SkillPage extends StatelessWidget {
                             border: Border.all(width: 1.5, color: Colors.white),
                             shape: BoxShape.circle,
                           ),
-                          child: Image.asset(
+                          child: Image.network(
                             TechItemImagePath.techItemPath.values
                                 .toList()[index],
+                            loadingBuilder: (context, child, loadingProgress) {
+                              if (loadingProgress == null) return child;
+                              return Center(child: CircularProgressIndicator());
+                            },
+                            errorBuilder: (context, error, stackTrace) {
+                              return Icon(Icons.error);
+                            },
+                            scale: 1.0,
                             height: 70,
                             width: 70,
                             fit: BoxFit.cover,
+                            color:
+                                TechItemImagePath.techItemPath.keys
+                                        .toList()[index] ==
+                                    'GitHub'
+                                ? Colors.white
+                                : null,
                           ),
                         ),
                         SizedBox(height: 15),

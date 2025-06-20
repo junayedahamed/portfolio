@@ -33,7 +33,18 @@ class ProjectCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(width: 3, color: Colors.white),
                   ),
-                  child: Image.asset(image, fit: BoxFit.fitWidth, scale: 1.0),
+                  child: Image.network(
+                    image,
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return Center(child: CircularProgressIndicator());
+                    },
+                    errorBuilder: (context, error, stackTrace) {
+                      return Icon(Icons.error);
+                    },
+                    fit: BoxFit.fitWidth,
+                    scale: 1.0,
+                  ),
                 ),
                 widget,
               ],

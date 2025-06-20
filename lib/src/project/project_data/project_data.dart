@@ -13,10 +13,10 @@ class ProjectData {
     'A web app that is my portfolio',
   ];
   static const List<String> projectImage = [
-    'image/jtb.png',
-    'image/music.png',
-    'image/quizy.png',
-    'image/portfolio.png',
+    'https://c9yois02lm.ufs.sh/f/RXJBrPvyVfAxxOS8MW3g6Ua32SlhOEPT9iwZ1z8GCQDWjyFL',
+    'https://c9yois02lm.ufs.sh/f/RXJBrPvyVfAx9CD9ACV5SDm35NT2bPVCHGRrFzBgMXxQUaen',
+    'https://c9yois02lm.ufs.sh/f/RXJBrPvyVfAxYUyc9uJSAb5pao2WXGiI8NF04zLZqOKJlnyt',
+    'https://c9yois02lm.ufs.sh/f/RXJBrPvyVfAxFW3tW37UyeiNgtKkI7LhPxZRDYHodA2Cv5SE',
   ];
   static const List<String> projectLink = [
     "https://github.com/junayedahamed/Juna_the_bot_Discord",

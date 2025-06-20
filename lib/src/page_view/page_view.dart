@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:portfolio/src/about_and_contact/about_and_contact.dart';
 import 'package:portfolio/src/experience/experience_page.dart';
 import 'package:portfolio/src/home/home_page.dart';
@@ -15,7 +16,8 @@ class MyPageView extends StatefulWidget {
   State<MyPageView> createState() => _MyPageViewState();
 }
 
-class _MyPageViewState extends State<MyPageView> {
+class _MyPageViewState extends State<MyPageView>
+    with SingleTickerProviderStateMixin {
   final pages = [
     HomePage(),
     AboutAndContact(),
@@ -24,11 +26,28 @@ class _MyPageViewState extends State<MyPageView> {
     ProjectPage(),
   ];
   int index = 0;
+  late final AnimationController controller;
+  @override
+  void initState() {
+    super.initState();
+
+    controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 6),
+    );
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     double screenwidth = MediaQuery.of(context).size.width;
     // double screenheighgt = MediaQuery.of(context).size.height;
+    double screenheighgt = MediaQuery.of(context).size.height;
     return Scaffold(
       endDrawer: screenwidth <= 625
           ? MyDrawer(
@@ -203,7 +222,32 @@ class _MyPageViewState extends State<MyPageView> {
                     )
                   : null,
             ),
-      body: Center(child: pages[index]),
+      body: PageView(
+        children: [
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Center(
+                child: Lottie.asset(
+                  "image/firework.json",
+                  height: screenheighgt,
+                  width: screenheighgt,
+                  // fit: BoxFit.cover,
+                  // animate: true,
+                  controller: controller,
+                  onLoaded: (p0) {
+                    controller
+                      ..duration = Duration(seconds: 4)
+                      ..repeat();
+                  },
+                  repeat: true,
+                ),
+              ),
+              pages[index],
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

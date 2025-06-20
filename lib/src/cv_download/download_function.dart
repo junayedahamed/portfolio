@@ -1,14 +1,24 @@
+import 'dart:developer';
 // ignore: deprecated_member_use, avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:http/http.dart' as http;
+
 class DownloadFunction extends ChangeNotifier {
   Future<void> loadAssetAsBytes(String assetPath) async {
-    final data = await rootBundle.load(assetPath);
+    try {
+      final data = await http.get(Uri.parse(assetPath));
 
-    downloadCv(data.buffer.asUint8List(), "Resume.pdf");
+      if (data.statusCode == 200) {
+        final cvdata = data.bodyBytes;
+        downloadCv(cvdata, "Resume.pdf");
+      }
+    } on Exception catch (e) {
+      log(e.toString());
+    }
   }
 
   void downloadCv(Uint8List bytes, String fileName) {
