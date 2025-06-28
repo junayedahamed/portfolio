@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:portfolio/src/about_and_contact/about_and_contact.dart';
+import 'package:portfolio/src/competitive_programming_info/compititive_page.dart';
 import 'package:portfolio/src/experience/experience_page.dart';
 import 'package:portfolio/src/home/home_page.dart';
 import 'package:portfolio/src/home/widgets/app_bar_action_buttons.dart';
@@ -24,6 +25,7 @@ class _MyPageViewState extends State<MyPageView>
     SkillPage(),
     ExperiencePage(),
     ProjectPage(),
+    CompititivePage(),
   ];
   int index = 0;
   late final AnimationController controller;
@@ -114,6 +116,18 @@ class _MyPageViewState extends State<MyPageView>
                     fisrtText: ButtonNames.btn4,
                     secText: ButtonNames.btn4sub,
                   ),
+                  SizedBox(width: 15),
+                  AppBarActionButtons(
+                    ontap: () {
+                      setState(() {
+                        index = 5;
+                      });
+                      Navigator.of(context).pop();
+                    },
+
+                    fisrtText: ButtonNames.competetive1,
+                    secText: ButtonNames.competetive2,
+                  ),
                 ],
               ),
             )
@@ -161,9 +175,7 @@ class _MyPageViewState extends State<MyPageView>
                   ontap: () {
                     // context.go('/experties/skill');
                     setState(() {
-                      setState(() {
-                        index = 2;
-                      });
+                      index = 2;
                     });
                   },
 
@@ -195,6 +207,16 @@ class _MyPageViewState extends State<MyPageView>
                   secText: ButtonNames.btn4sub,
                 ),
                 SizedBox(width: 25),
+                AppBarActionButtons(
+                  ontap: () {
+                    setState(() {
+                      index = 5;
+                    });
+                  },
+
+                  fisrtText: ButtonNames.competetive1,
+                  secText: ButtonNames.competetive2,
+                ),
               ],
             )
           : AppBar(

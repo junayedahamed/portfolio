@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/src/about_and_contact/about_and_contact.dart';
+import 'package:portfolio/src/competitive_programming_info/compititive_page.dart';
 import 'package:portfolio/src/experience/experience_page.dart';
 import 'package:portfolio/src/page_view/page_view.dart';
 import 'package:portfolio/src/project/project_page.dart';
@@ -27,6 +28,10 @@ class MyRouter {
       GoRoute(
         path: '/projects/work',
         builder: (context, state) => ProjectPage(),
+      ),
+      GoRoute(
+        path: '/problemsolve/comp',
+        builder: (context, state) => CompititivePage(),
       ),
     ],
   );
