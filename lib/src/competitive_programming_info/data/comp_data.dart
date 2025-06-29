@@ -11,5 +11,5 @@ class CompData {
     "https://c9yois02lm.ufs.sh/f/RXJBrPvyVfAxRgLIYkvyVfAxjgXOdW7n6we9cQizkKbT4EmJ",
     "https://assets.codeforces.com/users/kguseva/comments/cf.png",
   ];
-  static String ratting = "700+ (newbie)";
+  static String ratting = "764 (newbie)";
 }
