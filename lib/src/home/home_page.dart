@@ -120,12 +120,21 @@ class _HomePageState extends State<HomePage>
           mainAxisAlignment: MainAxisAlignment.center,
           spacing: 1,
           children: [
-            Icon(Icons.copyright, size: 15),
-            Text(DateTime.now().year.toString()),
+            Icon(
+              Icons.copyright,
+              size: 15,
+              color: const Color.fromARGB(255, 104, 103, 103),
+            ),
+            Text(
+              DateTime.now().year.toString(),
+              style: TextStyle(color: const Color.fromARGB(255, 104, 103, 103)),
+            ),
             Center(
               child: Text(
-                " All rights reserved by Junayed.",
-                style: TextStyle(),
+                " Junayed.All rights reserved",
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 104, 103, 103),
+                ),
               ),
             ),
           ],

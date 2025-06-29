@@ -11,5 +11,5 @@ class ButtonNames {
   static final btn4sub = "WORK";
   static final downloadCv = "Download CV";
   static final competetive1 = "Problem Solving";
-  static final competetive2 = "Compititive Programming";
+  static final competetive2 = "P P S";
 }

@@ -67,7 +67,7 @@ class _MyPageViewState extends State<MyPageView>
                     },
 
                     fisrtText: "Home",
-                    secText: "Home",
+                    //  secText: "Home",
                   ),
                   AppBarActionButtons(
                     ontap: () {
@@ -78,7 +78,7 @@ class _MyPageViewState extends State<MyPageView>
                     },
 
                     fisrtText: ButtonNames.btn1,
-                    secText: ButtonNames.btn1sub,
+                    // secText: ButtonNames.btn1sub,
                   ),
                   SizedBox(width: 15),
                   AppBarActionButtons(
@@ -90,7 +90,7 @@ class _MyPageViewState extends State<MyPageView>
                     },
 
                     fisrtText: ButtonNames.btn2,
-                    secText: ButtonNames.btn2sub,
+                    //secText: ButtonNames.btn2sub,
                   ),
                   SizedBox(width: 15),
                   AppBarActionButtons(
@@ -102,7 +102,7 @@ class _MyPageViewState extends State<MyPageView>
                     },
 
                     fisrtText: ButtonNames.btn3,
-                    secText: ButtonNames.btn3sub,
+                    // secText: ButtonNames.btn3sub,
                   ),
                   SizedBox(width: 15),
                   AppBarActionButtons(
@@ -114,7 +114,7 @@ class _MyPageViewState extends State<MyPageView>
                     },
 
                     fisrtText: ButtonNames.btn4,
-                    secText: ButtonNames.btn4sub,
+                    //  secText: ButtonNames.btn4sub,
                   ),
                   SizedBox(width: 15),
                   AppBarActionButtons(
@@ -126,7 +126,7 @@ class _MyPageViewState extends State<MyPageView>
                     },
 
                     fisrtText: ButtonNames.competetive1,
-                    secText: ButtonNames.competetive2,
+                    //   secText: ButtonNames.competetive2,
                   ),
                 ],
               ),
@@ -168,7 +168,7 @@ class _MyPageViewState extends State<MyPageView>
                   },
 
                   fisrtText: ButtonNames.btn1,
-                  secText: ButtonNames.btn1sub,
+                  // secText: ButtonNames.btn1sub,
                 ),
                 SizedBox(width: 25),
                 AppBarActionButtons(
@@ -180,7 +180,7 @@ class _MyPageViewState extends State<MyPageView>
                   },
 
                   fisrtText: ButtonNames.btn2,
-                  secText: ButtonNames.btn2sub,
+                  //  secText: ButtonNames.btn2sub,
                 ),
                 SizedBox(width: 30),
                 AppBarActionButtons(
@@ -192,7 +192,7 @@ class _MyPageViewState extends State<MyPageView>
                   },
 
                   fisrtText: ButtonNames.btn3,
-                  secText: ButtonNames.btn3sub,
+                  // secText: ButtonNames.btn3sub,
                 ),
                 SizedBox(width: 30),
                 AppBarActionButtons(
@@ -204,9 +204,9 @@ class _MyPageViewState extends State<MyPageView>
                   },
 
                   fisrtText: ButtonNames.btn4,
-                  secText: ButtonNames.btn4sub,
+                  // secText: ButtonNames.btn4sub,
                 ),
-                SizedBox(width: 25),
+                SizedBox(width: 15),
                 AppBarActionButtons(
                   ontap: () {
                     setState(() {
@@ -215,7 +215,7 @@ class _MyPageViewState extends State<MyPageView>
                   },
 
                   fisrtText: ButtonNames.competetive1,
-                  secText: ButtonNames.competetive2,
+                  // secText: ButtonNames.competetive2,
                 ),
               ],
             )

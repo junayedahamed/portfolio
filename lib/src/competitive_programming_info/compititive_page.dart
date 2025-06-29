@@ -57,16 +57,6 @@ class _CompititivePageState extends State<CompititivePage>
             ),
           ),
 
-          // screenwidth <= 625
-          //     ? SmallScreenProject()
-          //     : screenwidth <= 1000 && screenwidth >= 620
-          //     ? MediumScreenProject()
-          //     : LargeScreenProject(),
-          // // screenwidth < 580
-          // //     ? SmallScreenProject()
-          // //     : screenwidth < 1024
-          // //     ? MediumScreenProject()
-          // //     : LargeScreenProject(),
           GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: screenwidth <= 625
