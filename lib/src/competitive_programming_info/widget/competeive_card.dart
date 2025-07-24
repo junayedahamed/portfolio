@@ -35,6 +35,7 @@ class CompeteiveCard extends StatelessWidget {
                   errorBuilder: (context, error, stackTrace) {
                     return Icon(Icons.error);
                   },
+                  height: 100,
                   fit: BoxFit.fitWidth,
                   scale: 1.0,
                 ),
