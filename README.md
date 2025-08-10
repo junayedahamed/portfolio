@@ -4,23 +4,22 @@ Welcome to my portfolio! Here you'll find information about my projects, skills,
 
 ## 🚀 Projects
 
-- **Project 1:** Brief description of your project.  
-    [GitHub Repo](#) | [Live Demo](#)
+- **WEB application:**   
+ <a href='https://junayedahamed.github.io/'> Live Demo</a>
 
-- **Project 2:** Brief description of your project.  
-    [GitHub Repo](#) | [Live Demo](#)
+
 
 ## 🛠️ Skills
 
-- Programming Languages: Python, JavaScript, etc.
-- Frameworks: React, Node.js, etc.
+- Programming Languages: C,Cpp,Dart, etc.
+- Frameworks: Flutter.
 - Tools: Git, Docker, etc.
 
 ## 📫 Contact
 
-- Email: your.email@example.com
-- [LinkedIn](#)
-- [Twitter](#)
+- Email: junayedahamed660@gmail.com
+
+
 
 ---
 
