@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage>
               color: const Color.fromARGB(255, 104, 103, 103),
             ),
             Text(
-              DateTime.now().year.toString(),
+              2025.toString(),
               style: TextStyle(color: const Color.fromARGB(255, 104, 103, 103)),
             ),
             Center(
